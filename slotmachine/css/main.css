@@ -3,3 +3,8 @@
     padding: 0;
     margin: 5px;
 }
+
+canvas {
+    position: absolute;
+    background-color: #ffffff;
+}
