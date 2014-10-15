@@ -59,7 +59,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="img\External Game Document.docx" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="css\normalize.css" />
     <Content Include="img\B A N A N A S BANANAS.png" />
@@ -68,7 +67,8 @@
     <Content Include="img\Bet1Pushed.png" />
     <Content Include="img\BetMaxUnpushed.png" />
     <Content Include="img\betOneUnPushed.png" />
-    <Content Include="img\BGMusic.mp3" />
+    <Content Include="img\quit.png" />
+    <Content Include="sounds\BGMusic.mp3" />
     <Content Include="img\Blank.png" />
     <Content Include="img\Cherries.png" />
     <Content Include="img\Grapes.png" />
@@ -98,6 +98,7 @@
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\main.js" />
     <None Include="Scripts\_references.js" />
+    <Content Include="sounds\JACKPOT.mp3" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +111,7 @@
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\tweenjs\tweenjs.d.ts" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

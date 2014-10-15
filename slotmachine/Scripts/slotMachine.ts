@@ -1,12 +1,14 @@
 ﻿/**
     File name: slotMachines.ts
-    Author: James White
-    Site Name: Slot Machine 
-    File decsription: slotMachine.ts has all the logic for the slotmachine
+    Made by: James White
+    Name: Slot Machine 
+    Decsription: slotMachine.ts has all the logic for the slotmachine
  */
 //Global Variables
 var timer = 0;
 var stage;
+var fruits = "";
+var winRatio = 0;
 var playersMoney = 500;
 var winnings = 0;
 var jackpot = 5000;
@@ -15,9 +17,16 @@ var playerBet = 0;
 var wins = 0;
 var losses = 0;
 var spinOutcome;
-var fruits = "";
-var winRatio = 0;
 //All the slot machine choices variables, images/numbers.
+var bell = 0;
+var bellImage = new Image();
+bellImage.src = "img/Bells.png";
+var seven = 0;
+var sevenImage = new Image();
+sevenImage.src = "img/Seven.png";
+var blank = 0;
+var blankImage = new Image();
+blankImage.src = "img/Blank.png";
 var grape = 0;
 var grapeImage = new Image();
 grapeImage.src = "img/Grapes.png";
@@ -33,15 +42,7 @@ cherryImage.src = "img/Cherries.png";
 var bar = 0;
 var barImage = new Image();
 barImage.src = "img/Bar.png";
-var bell = 0;
-var bellImage = new Image();
-bellImage.src = "img/Bells.png";
-var seven = 0;
-var sevenImage = new Image();
-sevenImage.src = "img/Seven.png";
-var blank = 0;
-var blankImage = new Image();
-blankImage.src = "img/Blank.png";
+
 //The Stage
 stage = new createjs.Stage(document.getElementById("canvas"));
 //SlotMachine Image
@@ -56,6 +57,8 @@ var betMaxPushed = new createjs.Bitmap("img/MaxBetPushed.png");
 var betOnePushed = new createjs.Bitmap("img/Bet1Pushed.png");
 var spinPushed = new createjs.Bitmap("img/SPINPUSHED.png");
 var resetPushed = new createjs.Bitmap("img/resetPushed.png");
+//Quit button
+var quitButton = new createjs.Bitmap("img/quit.png");
 //Text for the jackpot, bets, etc.
 var jackpotTxt = new createjs.Text(""+ jackpot, "12px Arial", "#FFF");
 var playBet = new createjs.Text("Your Bet: " + playerBet, "12px Arial", "#FFF");
@@ -66,12 +69,18 @@ var wheelOne;
 var wheelTwo;
 var wheelThree;
 var wheels = [wheelOne = new createjs.Bitmap(barImage), wheelTwo = new createjs.Bitmap(orangeImage), wheelThree = new createjs.Bitmap(bellImage)];
+//Music time
+var bgmusic = new Audio('sounds/BGMusic.mp3');
+bgmusic.play();
 //Function that initializes and sets all the buttons/text
 function init() {
     createjs.Ticker.setFPS(60);
     stage.enableMouseOver(20);
     //Add all the children, buttons, slot machine and text
     stage.addChild(slotMachine);
+    stage.addChild(quitButton);
+    quitButton.x = 274;
+    quitButton.y = 632;
     stage.addChild(playBet);
     playBet.x = 142;
     playBet.y = 363;
@@ -133,8 +142,14 @@ function init() {
     betMaxUnpushed.addEventListener("click", setMaxBet);
     //Click event for spinning
     spinUnpushed.addEventListener("click", spinWheel);
+    //Click event for quitting
+    quitButton.addEventListener("click", quitOut);
 }
+//Function for quitting
+function quitOut() {
+    window.close();
 
+}
 //Function for the reset button
 function resetPush() {
     resetPushed.visible = true;
@@ -171,7 +186,6 @@ function setOneBet() {
     setTimeout(function () {
         betOnePushed.visible = false;
     }, 300);
-
     handleTick();
 }
 //Function to set the maxbet
@@ -184,10 +198,8 @@ function setMaxBet() {
     setTimeout(function () {
         betMaxPushed.visible = false;
     }, 300);
-
     handleTick();
 }
-
 //Function to update the stage
 function handleTick() {
     stage.update();
@@ -219,11 +231,12 @@ function checkJackPot() {
     var jackPotTry = Math.floor(Math.random() * 51 + 1);
     var jackPotWin = Math.floor(Math.random() * 51 + 1);
     if (jackPotTry == jackPotWin) {
-        alert("You Won the $" + jackpot + " Jackpot!!");
-        winLose.text = "JACKPOT!!!!! $" + jackpot;
+        alert("You Won the $" + jackpot + " Jackpot Yaaa!!");
+        var bgmusic = new Audio('sounds/JACKPOT.mp3');
+        bgmusic.play();
+        winLose.text = "JACKPOT! Baller! $" + jackpot;
         playersMoney += jackpot;
         jackpot = 1000;
-
     }
 }
     /* Utility function to show a win message and increase player money */
@@ -234,7 +247,6 @@ function checkJackPot() {
         resetFruitTally();
         checkJackPot();
     }
-
     /* Utility function to show a loss message and reduce player money */
     function showLossMessage() {
         playersMoney -= playerBet;
@@ -366,7 +378,7 @@ function checkJackPot() {
         }
 
     }
-
+    //Function to spin the wheel, checks for money, and does button 'animation'
     function spinWheel() {
         spinPushed.visible = true;
         handleTick();
