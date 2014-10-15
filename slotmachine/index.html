@@ -1,56 +1,27 @@
-﻿<!DOCTYPE html>
+﻿<!--
+    File name: index.html
+    Author: James White
+    Site Name: Slot machine
+    File decsription: This page is the base for slot machine
+-->
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>Slot Machine</title>
     <!-- CSS Section -->
+    <link href="css/normalize.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
 
 </head>
-<body>
-    <div>
-        <h1>Slot Machine</h1>
-        <div>
-            <h2>Player Statistics</h2>
-            <hr />
-            <ul id="playerStats">
-                <li id="jackpot">Jackpot: 500</li>
-                <li id="playerMoney">Player Money: 1000</li>
-                <li id="playerTurn">Turn: 0</li>
-                <li id="playerWins">Wins: 0</li>
-                <li id="playerLosses">Losses: 0</li>
-                <li id="playerWinRatio">Win Ratio: 0%</li>
-            </ul>
-            <hr />
-        </div>
-
-        <div id="betEntry">
-
-            <p>Place Your Bet Here</p>
-            <input id="playerBet" name="points" value="10">
-            <hr />
-        </div>
-
-
-        <button id="spinButton">Spin!</button>
-    </div>
-
-    <div id="result">
-        <h2>Spin Result</h2>
-        <hr />
-        <p></p>
-    </div>
-    <hr />
-    <div id="winOrLose">
-        <p></p>
-    </div>
-
-
+<body onload="init()">
+    <canvas id="canvas" width="600" height="720"></canvas>
     <!-- JavaScript Section -->
-    <script src="js/jquery.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/easeljs-0.7.1.min.js"></script>
-    <embed src="img/BGMusic.mp3" loop="TRUE">
-    <noembed> <bgsound src="img/BGMusic.mp3"> </noembed> 
+    <script src="Scripts/jquery-2.1.1.min.js"></script>
+    <script src="Scripts/easeljs-0.7.1.min.js"></script>
+    <script src="Scripts/slotMachine.js"></script>
 </body>
 </html>

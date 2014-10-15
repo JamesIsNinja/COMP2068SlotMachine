@@ -4,7 +4,7 @@
     margin: 5px;
 }
 
-canvas {
+#canvas {
     position: absolute;
-    background-color: #ffffff;
+    border:dashed 1px black;
 }

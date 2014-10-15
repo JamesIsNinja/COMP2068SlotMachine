@@ -59,8 +59,27 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="img\External Game Document.docx" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="css\normalize.css" />
+    <Content Include="img\B A N A N A S BANANAS.png" />
+    <Content Include="img\Bar.png" />
+    <Content Include="img\Bells.png" />
+    <Content Include="img\Bet1Pushed.png" />
+    <Content Include="img\BetMaxUnpushed.png" />
+    <Content Include="img\betOneUnPushed.png" />
+    <Content Include="img\BGMusic.mp3" />
+    <Content Include="img\Blank.png" />
+    <Content Include="img\Cherries.png" />
+    <Content Include="img\Grapes.png" />
+    <Content Include="img\MaxBetPushed.png" />
+    <Content Include="img\Orangees.png" />
+    <Content Include="img\plmd25mb.png" />
+    <Content Include="img\ResetPushed.png" />
+    <Content Include="img\ResetUnpushed.png" />
+    <Content Include="img\Seven.png" />
+    <Content Include="img\SPIN.PNG" />
+    <Content Include="img\SPINPUSHED.png" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
@@ -74,33 +93,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\main.css" />
-    <Content Include="img\B A N A N A S BANANAS.png" />
-    <Content Include="img\Bar.png" />
-    <Content Include="img\Bells.png" />
-    <Content Include="img\Bet1Pushed.png" />
-    <Content Include="img\BETMAXMIDPUSH.png" />
-    <Content Include="img\BETMAXUN.png" />
-    <Content Include="img\BETONEMIDPUSHED.png" />
-    <Content Include="img\betOneUnPushed.png" />
-    <Content Include="img\BGMusic.mp3" />
-    <Content Include="img\Cherries.png" />
-    <Content Include="img\Grapes.png" />
-    <Content Include="img\MaxBetPushed.png" />
-    <Content Include="img\Orangees.png" />
-    <Content Include="img\plmd25mb.png" />
-    <Content Include="img\RESETMID.png" />
-    <Content Include="img\RESETPUSHED1.png" />
-    <Content Include="img\RESTUNPUSHED.png" />
-    <Content Include="img\Seven.png" />
-    <Content Include="img\SPIN.PNG" />
-    <Content Include="img\SPINMID.png" />
-    <Content Include="img\SPINPUSHED.png" />
     <Content Include="index.html" />
     <Content Include="Scripts\easeljs-0.7.1.min.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\main.js" />
     <None Include="Scripts\_references.js" />
-    <Content Include="slotmachine.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
